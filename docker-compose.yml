@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  mcp-app:
+    build: .
+    container_name: mcp-development
+    working_dir: /app
+    volumes:
+      - .:/app  # Mount current directory for development
+      - mcp-data:/data  # Persistent volume for data
+      - uv-cache:/data/uv-cache  # Persistent uv cache
+      - mcp-config:/data/mcp-config  # Persistent MCP configurations
+    environment:
+      - PYTHONPATH=/app
+      - UV_CACHE_DIR=/data/uv-cache
+    stdin_open: true
+    tty: true
+    command: bash
+
+volumes:
+  mcp-data:
+  uv-cache:
+  mcp-config:
