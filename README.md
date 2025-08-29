@@ -19,6 +19,8 @@
    - Persistent volumes for data, uv cache, and MCP configurations
    - Current directory mounted for live development
 
+3.5 Additional Information:
+
 ## Persistent Volumes
 
 - `mcp-data`: General persistent data storage (`/data`)
